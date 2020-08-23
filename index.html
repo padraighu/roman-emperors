@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Emperor Birthplaces</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="card right" id="detail">
+        <div class="card-content" id="detail-content">
+            <span class="card-title">
+                <b>Roman Emperor Birthplaces</b>
+            </span>
+            <p>Hover over towns and provinces to see the details.</p>
+        </div>
+    </div>
+    <div id="legends-card-container">
+        <div class="card" id="legends">
+            <div class="card-content center-align">
+                <div class="hide-on-med-and-down" id="legends-container">
+                    <svg id="province-legend"></svg>
+                    <svg id="town-legend"></svg>
+                </div>
+                <p>View by province</p>
+                <div class="switch">
+                    <label>
+                        Hide
+                        <input type="checkbox" id="city-province-select">
+                        <span class="lever"></span>
+                        Show
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="map.js"></script>
+</body>
+
+</html>

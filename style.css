@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+#detail {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.detail-pc {
+	width: 20vw;
+	margin-right: 0.5rem;
+}
+
+.detail-mobile {
+	width: 100vw;
+	height: 25vh;
+	overflow: auto;
+	margin-top: 0;
+}
+
+#legends {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.legends-pc {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	width: 15vw;
+}
+
+.legends-mobile {
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+	background-color: #E41332 !important;
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+	background-color: #F55761 !important;
+}
+
+#legends-container {
+	display: flex;
+	flex-direction: column;
+	height: 140px;
+}
+
+svg {
+	height: 50%;
+}
+
+.center-legends {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
