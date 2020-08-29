@@ -60,7 +60,10 @@ body {
 }
 
 svg {
+	display: block;
+	margin: auto;
 	height: 50%;
+	width: 150px;
 }
 
 .center-legends {
