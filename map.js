@@ -54,6 +54,9 @@ function setUpLegends() {
         .call(legendSize);
 }
 
+const cityInstruction = 'Hover over towns to see the details.';
+const provinceInstruction = 'Hover over provinces to see the details.';
+
 const mobile = isMobile();
 var cityView = true;
 var lastHoveredCityId = null;
@@ -73,8 +76,11 @@ cityProvinceSwitch.addEventListener('input', (e) => {
     cityView = !cityProvinceSwitch.checked;
     lastHoveredCityId = null;
     lstHoveredProvinceId = null;
-    if (!cityView) map.setLayoutProperty('provinces-final-2ef0od', 'visibility', 'visible');
-    else map.setLayoutProperty('provinces-final-2ef0od', 'visibility', 'none');
+    let instruction = (!cityView) ? provinceInstruction : cityInstruction;
+    let details = `<span class="card-title"><b>Roman Emperor Birthplaces</b></span><p>${instruction}</p>`;
+    let provinceVisibility = (!cityView) ? 'visible' : 'none';
+    map.setLayoutProperty('provinces-final-2ef0od', 'visibility', provinceVisibility);
+    detailContentDiv.innerHTML = details;
 });
 
 detailDiv.classList.add(detailPCOrMobile);
