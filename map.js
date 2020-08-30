@@ -128,4 +128,10 @@ map.on('mousemove', 'provinces-final-2ef0od', e => {
         detailContentDiv.innerHTML = details;
         lastHoveredProvinceId = e.features[0].id;
     }
-})
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // initialize modal
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+});

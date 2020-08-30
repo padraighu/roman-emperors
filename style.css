@@ -71,3 +71,7 @@ svg {
 	justify-content: center;
 	width: 100%;
 }
+
+#notes-lnk-container {
+	margin-top: 0.5rem;
+}
