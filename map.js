@@ -79,7 +79,7 @@ cityProvinceSwitch.addEventListener('input', (e) => {
     let instruction = (!cityView) ? provinceInstruction : cityInstruction;
     let details = `<span class="card-title"><b>Roman Emperor Birthplaces</b></span><p>${instruction}</p>`;
     let provinceVisibility = (!cityView) ? 'visible' : 'none';
-    map.setLayoutProperty('provinces-final-2ef0od', 'visibility', provinceVisibility);
+    map.setLayoutProperty('provinces-fill', 'visibility', provinceVisibility);
     detailContentDiv.innerHTML = details;
 });
 
@@ -93,12 +93,12 @@ const center = mobile ? [15.046085, 50.903014] : [21.046085, 40.903014];
 
 const map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/huyifei23/ckdfeuatk0eim1imll5uve162/draft', // stylesheet location
+    style: 'mapbox://styles/huyifei23/ckdfeuatk0eim1imll5uve162', // stylesheet location
     center: center,// starting position [lng, lat]
     zoom: zoomLevel // starting zoom
 });
 
-map.on('mousemove', 'city-7higia', e => {
+map.on('mousemove', 'city-point', e => {
     if (cityView && lastHoveredCityId != e.features[0].id) {
         let prop = e.features[0].properties;
         let emps = JSON.parse(prop['emperors']);
@@ -114,7 +114,7 @@ map.on('mousemove', 'city-7higia', e => {
     }
 });
 
-map.on('mousemove', 'provinces-final-2ef0od', e => {
+map.on('mousemove', 'provinces-fill', e => {
     if (!cityView && lastHoveredProvinceId != e.features[0].id) {
         let prop = e.features[0].properties;
         let emps = JSON.parse(prop['emperors']);
