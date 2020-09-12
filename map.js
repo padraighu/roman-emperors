@@ -80,6 +80,9 @@ cityProvinceSwitch.addEventListener('input', (e) => {
     let details = `<span class="card-title"><b>Roman Emperor Birthplaces</b></span><p>${instruction}</p>`;
     let provinceVisibility = (!cityView) ? 'visible' : 'none';
     map.setLayoutProperty('provinces-fill', 'visibility', provinceVisibility);
+    let cityVisibility = (cityView) ? 'visible' : 'none';
+    map.setLayoutProperty('city-point', 'visibility', cityVisibility);
+    map.setLayoutProperty('city-label', 'visibility', cityVisibility);
     detailContentDiv.innerHTML = details;
 });
 
